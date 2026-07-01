@@ -17,7 +17,7 @@ amount.addEventListener("input", () => {
 })
 
 form.onsubmit = (evento) => {
-    event.prevent.Default()
+    event.preventDefault()
     switch (currency.value) {
     case "USD":
         convertcurrency(amount.value, USD, "US$")
@@ -35,7 +35,7 @@ form.onsubmit = (evento) => {
 function convertcurrency(amount, price, symbol) {
     try {
         footer.classList.add("show-result")
-        description.textContent = '${symbol} 1 = ${formatcurrencyBRL(price)}'
+        description.textContent = `${symbol} 1 = ${formatcurrencyBRL(price)}`
         let total = amount * price + "a"
         console.log (IsNaN(total))
         if (isNaN(total)) {
